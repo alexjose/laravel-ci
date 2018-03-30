@@ -13,8 +13,8 @@ RUN docker-php-ext-install mcrypt mbstring pdo_mysql curl json intl gd xml zip b
 
 # Install XDebug
 # TODO: Upgrade version when stable version release
-RUN pecl install xdebug
-RUN docker-php-ext-enable xdebug
+RUN pecl install xdebug && pecl install mongodb
+RUN docker-php-ext-enable xdebug mongodb
 
 # Installing Composer
 RUN curl -sS https://getcomposer.org/installer | php
